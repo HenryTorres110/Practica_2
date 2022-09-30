@@ -47,6 +47,13 @@ IPATH=../../..
 #
 all: ${COMPILER}
 all: ${COMPILER}/blinky.axf
+#
+# The rule to build project with debug support.
+#
+
+debug: CFLAGS+=-g -D DEBUG
+debug: ${COMPILER}
+debug: ${COMPILER}/blinky.axf
 
 #
 # The rule to clean out all the build products.
